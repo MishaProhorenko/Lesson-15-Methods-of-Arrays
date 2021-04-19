@@ -55,8 +55,6 @@ console.log(deleteWordFromArray(firstArray, 'sex'))
 
 //         let requestForUser = prompt('Enter values')
 //         if (requestForUser === null || requestForUser === '') break;
-
-
 //         if (requestForUser === 'true') {
 //             createdArrayFromUser.push(true);
 //         } else if (requestForUser === 'false') {
@@ -266,15 +264,15 @@ const arrayOfPersons = [
 
 // Свойством zodiacSign обладают шесть объектов, а не два, однако они не прошли фильтрацию. исправлено
 
-// let arrayZodiacSign = []
-// for (let i = 0; i < arrayOfPersons.length; i++) {
-//     for (let zod in arrayOfPersons[i]) {
-//         if (zod == 'zodiacSign') {
-//             arrayZodiacSign.push(arrayOfPersons[i])
-//         }
-//     }
-// }
-// console.log(arrayZodiacSign)
+let arrayZodiacSign = []
+for (let i = 0; i < arrayOfPersons.length; i++) {
+    for (let zod in arrayOfPersons[i]) {
+        if (zod == 'zodiacSign') {
+            arrayZodiacSign.push(arrayOfPersons[i])
+        }
+    }
+}
+console.log(arrayZodiacSign)
 
 //=========================================================================
 
