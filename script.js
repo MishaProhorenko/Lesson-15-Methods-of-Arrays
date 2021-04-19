@@ -5,7 +5,7 @@
 //#1
 
 // Функция должна возвращать массив, а не выводить сообщение в консоль.
-// Названия для переменных numerOne и numberTwo - очень плохие
+// Названия для переменных numerOne и numberTwo - очень плохие исправлено
 
 // let arrayRandomNumbers = (min, max) => {
 //     let arr = [];
@@ -29,32 +29,25 @@
 
 // Функция обрабатывает только одно значение, а должны удаляться все
 
-// let firstArray = ['sex', 'drugs', 'rock and roll'];
-// let secondArray = ['egalite', 'fraternite', 'liberte'];
-// let thirdArray = ['Patria', 'o', 'muerte'];
+let firstArray = ['drugs', 'sex', 'drugs', 'sex', 'drugs', 'rock and roll', 'drugs'];
+let secondArray = ['egalite', 'fraternite', 'liberte'];
+let thirdArray = ['o','o','Patria', 'o', 'muerte','o'];
 
-// let deleteWordFromArray = (array, word) => {
-
-//     if (array.includes(word)) {
-//         let index = array.indexOf(word)
-//         array.splice(index, 1)
-
-//         return (array);
-//     } else {
-
-//         return (array);
-//     }
-
-// }
-// console.log(deleteWordFromArray(secondArray, 'liberte'))
+let deleteWordFromArray = (array, banStr) => {
+    let arr = []
+    array.forEach(item => {
+        if (item !== banStr) {
+            arr.push(item)
+        }
+    })
+    return (arr)
+}
+console.log(deleteWordFromArray(firstArray, 'sex'))
 
 //=========================================================================
 
 //#3
 
-
-// Писать цикл for без параметров - нонсенс. Уже лучше заменить на 
-// While. при попытке ввести в массив undefined ошибка в консоли -Uncaught SyntaxError: Unexpected token u in JSON at position 1
 
 // let functionCreatedArray = () => {
 //     let createdArrayFromUser = [];
@@ -74,8 +67,6 @@
 //             createdArrayFromUser.push(undefined);
 //         } else if (!isNaN(+requestForUser)) {
 //             createdArrayFromUser.push(+requestForUser);
-//         } else if (requestForUser.startsWith('[')) {
-//             createdArrayFromUser.push(JSON.parse(requestForUser));
 //         } else {
 //             createdArrayFromUser.push(requestForUser)
 //         }
@@ -273,7 +264,7 @@ const arrayOfPersons = [
 
 //4.4
 
-// Свойством zodiacSign обладают шесть объектов, а не два, однако они не прошли фильтрацию. 
+// Свойством zodiacSign обладают шесть объектов, а не два, однако они не прошли фильтрацию. исправлено
 
 // let arrayZodiacSign = []
 // for (let i = 0; i < arrayOfPersons.length; i++) {
