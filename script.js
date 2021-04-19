@@ -4,24 +4,30 @@
 
 //#1
 
-// let arrayRandomNumbers = (numberOne, numberTwo) => {
-//     let arr = [];
-//     function random() {
-//         let rand = Math.random() * Math.floor(numberTwo);
-//         return Math.round(rand);
-//     }
-//     for (let i = 0; i < numberTwo; i++) {
-//         arr.push(random(numberTwo))
+// Функция должна возвращать массив, а не выводить сообщение в консоль.
+// Названия для переменных numerOne и numberTwo - очень плохие
 
-//     }
-//     arr.length = numberOne;
-//     console.log(arr);
-// }
-// arrayRandomNumbers(9, 100)
+let arrayRandomNumbers = (min, max) => {
+    let arr = [];
+    function random() {
+        let rand = Math.random() * Math.floor(max);
+        return Math.round(rand);
+    }
+    for (let i = 0; i < max; i++) {
+        arr.push(random(max))
+
+    }
+    arr.length = min;
+   return arr;
+}
+console.log(arrayRandomNumbers(9, 100))
+
 
 //=========================================================================
 
 //#2
+
+// Функция обрабатывает только одно значение, а должны удаляться все
 
 // let firstArray = ['sex', 'drugs', 'rock and roll'];
 // let secondArray = ['egalite', 'fraternite', 'liberte'];
@@ -46,34 +52,38 @@
 
 //#3
 
-// let functionCreatedArray = () => {
-//     let createdArrayFromUser = [];
-//     for (; ;) {
 
-//         let requestForUser = prompt('Enter values')
-//         if (requestForUser === null || requestForUser === '') break;
+// Писать цикл for без параметров - нонсенс. Уже лучше заменить на 
+// While. при попытке ввести в массив undefined ошибка в консоли -Uncaught SyntaxError: Unexpected token u in JSON at position 1
+
+let functionCreatedArray = () => {
+    let createdArrayFromUser = [];
+    while(true) {
+
+        let requestForUser = prompt('Enter values')
+        if (requestForUser === null || requestForUser === '') break;
 
 
-//         if (requestForUser === 'true') {
-//             createdArrayFromUser.push(true);
-//         } else if (requestForUser === 'false') {
-//             createdArrayFromUser.push(false);
-//         } else if (requestForUser === 'null') {
-//             createdArrayFromUser.push(null);
-//         } else if (requestForUser === 'undefined') {
-//             createdArrayFromUser.push(undefined);
-//         } else if (!isNaN(+requestForUser)) {
-//             createdArrayFromUser.push(+requestForUser);
-//         } else if (requestForUser.startsWith('[')) {
-//             createdArrayFromUser.push(JSON.parse(requestForUser));
-//         } else {
-//             createdArrayFromUser.push(requestForUser)
-//         }
-//     };
-//     return createdArrayFromUser
-// }
+        if (requestForUser === 'true') {
+            createdArrayFromUser.push(true);
+        } else if (requestForUser === 'false') {
+            createdArrayFromUser.push(false);
+        } else if (requestForUser === 'null') {
+            createdArrayFromUser.push(null);
+        } else if (requestForUser === 'undefined') {
+            createdArrayFromUser.push(undefined);
+        } else if (!isNaN(+requestForUser)) {
+            createdArrayFromUser.push(+requestForUser);
+        } else if (requestForUser.startsWith('[')) {
+            createdArrayFromUser.push(JSON.parse(requestForUser));
+        } else {
+            createdArrayFromUser.push(requestForUser)
+        }
+    };
+    return createdArrayFromUser
+}
 
-// console.log(functionCreatedArray())
+console.log(functionCreatedArray())
 
 
 //=========================================================================
